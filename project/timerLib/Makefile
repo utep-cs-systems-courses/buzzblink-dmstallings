@@ -18,9 +18,3 @@ install: libTimer.a
 
 clean:
 	rm -f timerLib.a *.o
-
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Pr
