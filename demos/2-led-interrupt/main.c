@@ -15,9 +15,17 @@ int main(void) {
 }
 
 
+unsigned char count = 0;
 void
 __interrupt_vec(WDT_VECTOR) WDT()	/* 250 interrupts/sec */
 {
-  P1OUT |= LED_GREEN;
+  count++;
+  if (count > 2)
+    {
+      /* Modified so different combinations of LEDs are illuminated */
+      P1OUT ^= LED_GREEN;
+      P1OUT ^= LED_RED;
+      count = 0;
+    }
 } 
 

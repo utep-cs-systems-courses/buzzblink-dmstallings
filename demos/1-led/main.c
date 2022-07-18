@@ -10,3 +10,9 @@ int main(void) {
 
   or_sr(0x18);		/* CPU off, GIE on */
 }
+
+/* Not setting one of the LED bits in P1DIR means that the bit will not be set for output.
+   Therefore, it would be impossible to turn on that LED.
+   P1OUT |= LED will turn on an LED
+   P1OUT &= ~LED will turn off an LED
+   P1OUT ^= LED will toggle an LED */

@@ -11,6 +11,7 @@
 void main(void) 
 {  
   configureClocks();
+  enableWDTInterrupts();
 
   P1DIR |= LEDS;
   P1OUT &= ~LEDS;		/* leds initially off */
@@ -23,23 +24,37 @@ void main(void)
   or_sr(0x18);  // CPU off, GIE on
 } 
 
+char state = 0;
 void
 switch_interrupt_handler()
 {
-  char p1val = P1IN;		/* switch is in P1 */
-
+  char p1val = P1IN;    /* switch is in P1 */
+  
 /* update switch interrupt sense to detect changes from current buttons */
   P1IES |= (p1val & SWITCHES);	/* if switch up, sense down */
+  if (state) state--;
+  else state++;
   P1IES &= (p1val | ~SWITCHES);	/* if switch down, sense up */
 
 /* up=red, down=green */
-  if (p1val & SW1) {
+  /*if (p1val & SW1) {
     P1OUT |= LED_RED;
     P1OUT &= ~LED_GREEN;
   } else {
     P1OUT |= LED_GREEN;
     P1OUT &= ~LED_RED;
   }
+  */
+  /*switch (state){
+  case 1:
+    P1OUT |= LED_GREEN;
+    P1OUT |= LED_RED;
+    break;
+  default:
+    P1OUT |= LED_GREEN;
+    P1OUT &= ~LED_RED;
+    break;
+    }*/
 }
 
 
@@ -49,5 +64,22 @@ __interrupt_vec(PORT1_VECTOR) Port_1(){
   if (P1IFG & SWITCHES) {	      /* did a button cause this interrupt? */
     P1IFG &= ~SWITCHES;		      /* clear pending sw interrupts */
     switch_interrupt_handler();	/* single handler for all switches */
+  }
+}
+
+unsigned char count = 0;
+void
+__interrupt_vec(WDT_VECTOR) WDT()
+{
+  count++;
+  if (state == 1 && count >= 250) {
+    P1OUT ^= LED_GREEN;
+    P1OUT ^= LED_RED;
+    count = 0;
+  }
+  else if (state == 0 && count >= 10) {
+    P1OUT ^= LED_GREEN;
+    P1OUT ^= LED_RED;
+    count = 0;
   }
 }
