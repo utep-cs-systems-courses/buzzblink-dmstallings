@@ -11,7 +11,4 @@
 void switch_init();
 void switch_interrupt_handler();
 
-// for interrupt
-extern char switch_state_down, switch_state_changed;
-
 #endif // included
