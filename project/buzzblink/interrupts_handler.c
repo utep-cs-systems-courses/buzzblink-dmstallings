@@ -1,5 +1,12 @@
 #include <msp430.h>
 #include "switches.h"
+#include "led.h"
+#include "buzzer.h"
+
+void
+__interrupt_vec(WDT_VECTOR) WDT(){	/* 250 interrupts/sec */
+  
+  }
 
 /* Switch on P2 */
 void
