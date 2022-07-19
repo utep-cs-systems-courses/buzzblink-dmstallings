@@ -3,6 +3,8 @@
 
 void buzzer_init();
 void buzzer_set_period(short cycles);
+void song1();
+void song2();
 
 // 0 OCTAVE
 #define C0 122324
