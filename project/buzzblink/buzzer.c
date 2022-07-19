@@ -3,7 +3,6 @@
 #include "buzzer.h"
 
 
-
 void buzzer_init()
 {
   /* 
@@ -22,9 +21,18 @@ void buzzer_init()
 }
 
 
-
 void buzzer_set_period(short cycles)   // buzzer clock = 2Mhz 
 {
   CCR0 = cycles;
   CCR1 = cycles >> 1;                  // One half cycle
+}
+
+void song1()
+{
+  buzzer_set_period(2500);
+}
+
+void song2()
+{
+  buzzer_set_period(5000);
 }
