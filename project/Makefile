@@ -1,8 +1,8 @@
 all:
 	(cd timerLib && make install)
-	(cd toy && make)
+	(cd buzzblink && make)
 
 clean:
 	(cd timerLib && make clean)
-	(cd toy && make clean)
+	(cd buzzblink && make clean)
 	rm -rf h lib
