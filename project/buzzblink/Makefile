@@ -1,4 +1,3 @@
-
 COMMON_OBJECTS  = led.o interrupts_handler.o switches.o buzzer.o
 CPU             = msp430g2553
 CFLAGS          = -mmcu=${CPU} -I ./h
@@ -15,7 +14,7 @@ all: buzzblink.elf
 buzzblink.elf: ${COMMON_OBJECTS} main.o ./lib/libTimer.a
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^
 
-load: toy.elf
+load: buzzblink.elf
 	msp430loader.sh buzzblink.elf
 
 clean:
