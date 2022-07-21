@@ -31,21 +31,18 @@ switch_interrupt_handler()
   char p2val = switch_update_interrupt_sense();
 
   if (~p2val & SW1) {
-    sw_state = 1;
+    state = 1;
   }
   else if (~p2val & SW2) {
-    sw_state = 2;
+    state = 2;
   }
   else if (~p2val & SW3) {
-    sw_state = 3;
+    state = 3;
   }
   else if (~p2val & SW4) {
-    sw_state = 4;
+    state = 4;
   }
-  /* 0 when SW1 is up */
- 
   else {
-    sw_state = 4;
+    sw_state = 0;
   }
-  // sw1, sw2, sw3, sw4
 }
