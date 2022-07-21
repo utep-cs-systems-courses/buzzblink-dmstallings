@@ -8,6 +8,8 @@
 
 #define SWITCHES (SW0 | SW1 | SW2 | SW3) /* four switches on board */
 
+extern char state;
+
 void switch_init();
 void switch_interrupt_handler();
 
