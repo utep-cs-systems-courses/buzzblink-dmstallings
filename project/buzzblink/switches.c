@@ -3,7 +3,7 @@
 #include "led.h"
 #include "buzzer.h"
 
-char switch_state_down, switch_state_down;
+state = 0;
 
 static char 
 switch_update_interrupt_sense()
