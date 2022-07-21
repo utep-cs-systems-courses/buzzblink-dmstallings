@@ -7,19 +7,19 @@ void
 __interrupt_vec(WDT_VECTOR) WDT(){	/* 250 interrupts/sec */
   switch (state) {
     case 1:
-      buzzer_set_period(1000);
+      buzzer_set_period(5000);
       break;
     case 2:
-      buzzer_set_period(2000);
+      buzzer_set_period(7000);
       break;
     case 3:
-      buzzer_set_period(3000);
+      buzzer_set_period(9000);
       break;
     case 4:
-      buzzer_set_period(4000);
+      buzzer_set_period(11000);
       break;
     default:
-      buzzer_set_period(10000);
+      buzzer_set_period(1000);
     }
   }
 
