@@ -43,6 +43,6 @@ switch_interrupt_handler()
     state = 4;
   }
   else {
-    sw_state = 0;
+    state = 0;
   }
 }
