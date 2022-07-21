@@ -13,7 +13,7 @@ all: buzzblink.elf
 buzzblink.elf: ${COMMON_OBJECTS} buzzer.o led.o switches.o interrupts_handler.o
 	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ ../lib/libTimer.a
 
-load: toy.elf
+load: buzzblink.elf
 	msp430loader.sh buzzblink.elf
 
 clean:
