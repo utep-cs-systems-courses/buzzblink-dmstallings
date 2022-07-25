@@ -3,21 +3,21 @@
 #include "led.h"
 #include "buzzer.h"
 
+int sixteenth_note = 0;
+
 void
 __interrupt_vec(WDT_VECTOR) WDT(){	/* 250 interrupts/sec */
-  static int sixteenth_note = 0;
   static char count = 0;
   count++;
   
   switch (state) {
     case 1:
-      /* mainTheme(sixteenth_note);
-      if (count < 250)
+      mainTheme(sixteenth_note);
+      if (count == 75)
 	{
 	  sixteenth_note++;
 	  count = 0;
-	  }*/
-      buzzer_set_period(5000);
+	}
       break;
     case 2:
       /*aerithsTheme(sixteenth_note);

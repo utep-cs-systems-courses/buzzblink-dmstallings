@@ -9,6 +9,7 @@
 #define SWITCHES (SW1 | SW2 | SW3 | SW4) /* four switches on board */
 
 extern char state;
+extern int sixteenth_note;
 
 void switch_init();
 void switch_interrupt_handler();

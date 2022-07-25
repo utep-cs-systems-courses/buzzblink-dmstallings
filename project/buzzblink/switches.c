@@ -31,17 +31,22 @@ switch_interrupt_handler()
 
   if (~p2val & SW1) {
     state = 1;
+    sixteenth_note = 0;
   }
   else if (~p2val & SW2) {
     state = 2;
+    sixteenth_note = 0;
   }
   else if (~p2val & SW3) {
     state = 3;
+    sixteenth_note = 0;
   }
   else if (~p2val & SW4) {
     state = 4;
+    sixteenth_note = 0;
   }
   else {
     state = 0;
+    sixteenth_note = 0;
   }
 }

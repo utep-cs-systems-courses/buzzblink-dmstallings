@@ -205,8 +205,193 @@ void aheadOnOurWay(int sixteenth_note)
     case 136:
       buzzer_set_period(E4);
       break;
-    case 140:
+    case 142:
       buzzer_set_period(0);
+      break;
+    case 144:
+      buzzer_set_period(G4_SHARP);
+      break;
+    case 146:
+      buzzer_set_period(A4);
+      break;
+    case 148:
+      buzzer_set_period(B4);
+      break;
+    case 150:
+      buzzer_set_period(C5);
+      break;
+    case 152:
+      buzzer_set_period(E5);
+      break;
+    case 154:
+      buzzer_set_period(C5);
+      break;
+    case 156:
+      buzzer_set_period(E4);
+      break;
+    case 158:
+      buzzer_set_period(A4);
+      break;
+    case 160:
+      buzzer_set_period(G4);
+      break;
+    case 168:
+      buzzer_set_period(F4_SHARP);
+      break;
+    case 176:
+      buzzer_set_period(A4_SHARP);
+      break;
+    case 178:
+      buzzer_set_period(B4);
+      break;
+    case 180:
+      buzzer_set_period(C5_SHARP);
+      break;
+    case 182:
+      buzzer_set_period(D5);
+      break;
+    case 184:
+      buzzer_set_period(F5_SHARP);
+      break;
+    case 186:
+      buzzer_set_period(D5);
+      break;
+    case 188:
+      buzzer_set_period(E5);
+      break;
+    case 190:
+      buzzer_set_period(F5_SHARP);
+      break;
+    case 192:
+      buzzer_set_period(A5);
+      break;
+    case 194:
+      buzzer_set_period(G5);
+      break;
+    case 196:
+      buzzer_set_period(A5);
+      break;
+    case 198:
+      buzzer_set_period(B5);
+      break;
+    case 200:
+      buzzer_set_period(E5);
+      break;
+    case 207:
+      buzzer_set_period(0);
+      break;
+    case 208:
+      buzzer_set_period(E5);
+      break;
+    case 210:
+      buzzer_set_period(B4);
+      break;
+    case 212:
+      buzzer_set_period(C5);
+      break;
+    case 214:
+      buzzer_set_period(G4_SHARP);
+      break;
+    case 216:
+      buzzer_set_period(A4);
+      break;
+    case 220:
+      buzzer_set_period(0);
+      break;
+    case 226:
+      buzzer_set_period(G4_SHARP);
+      break;
+    case 228:
+      buzzer_set_period(A4);
+      break;
+    case 230:
+      buzzer_set_period(B4);
+      break;
+    case 232:
+      buzzer_set_period(C5);
+      break;
+    case 236:
+      buzzer_set_period(D5);
+      break;
+    case 238:
+      buzzer_set_period(C5);
+      break;
+    case 240:
+      buzzer_set_period(D5);
+      break;
+    case 245:
+      buzzer_set_period(0);
+      break;
+    case 246:
+      buzzer_set_period(B4);
+      break;
+    case 248:
+      buzzer_set_period(G4);
+      break;
+    case 250:
+      buzzer_set_period(F4_SHARP);
+      break;
+    case 252:
+      buzzer_set_period(E4);
+      break;
+    case 254:
+      buzzer_set_period(F4_SHARP);
+      break;
+    case 256:
+      buzzer_set_period(G4);
+      break;
+    case 258:
+      buzzer_set_period(E4);
+      break;
+    case 265:
+      buzzer_set_period(0);
+      break;
+    case 266:
+      buzzer_set_period(E5);
+      break;
+    case 272:
+      buzzer_set_period(C5);
+      break;
+    case 274:
+      buzzer_set_period(A4);
+      break;
+    case 276:
+      buzzer_set_period(G4);
+      break;
+    case 278:
+      buzzer_set_period(F4_SHARP);
+      break;
+    case 284:
+      buzzer_set_period(G4);
+      break;
+    case 286:
+      buzzer_set_period(A4);
+      break;
+    case 290:
+      buzzer_set_period(0);
+      break;
+    case 292:
+      buzzer_set_period(E4);
+      break;
+    case 294:
+      buzzer_set_period(B4);
+      break;
+    case 296:
+      buzzer_set_period(A4);
+      break;
+    case 298:
+      buzzer_set_period(G4);
+      break;
+    case 300:
+      buzzer_set_period(A4);
+      break;
+    case 303:
+      buzzer_set_period(F4_SHARP);
+      break;
+    case 307:
+      buzzer_set_period(G4);
+      break;
+    case 312:
       state = 0;
     }
 }
@@ -223,5 +408,22 @@ void tifasTheme(int sixteenth_note)
 
 void mainTheme(int sixteenth_note)
 {
-
+  switch (sixteenth_note)
+    {
+    case 0:
+      buzzer_set_period(A4);
+      break;
+    case 4:
+      buzzer_set_period(B4);
+      break;
+    case 6:
+      buzzer_set_period(C4_SHARP);
+      break;
+    case 8:
+      buzzer_set_period(G4_SHARP);
+      break;
+    case 12:
+      buzzer_set_period(F4_SHARP);
+      break;
+    }
 }
